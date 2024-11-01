@@ -1,0 +1,62 @@
+/* src/SettingsBox.css */
+
+.settings-box {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 200px;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    font-family: Arial, sans-serif;
+}
+
+.settings-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.settings-option {
+    margin-bottom: 1rem;
+}
+
+.settings-option label {
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.settings-option input[type="time"],
+.settings-option input[type="text"] {
+    width: 100%;
+    padding: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.player-count {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.player-count span {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.player-count button {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.player-count button:hover {
+    background-color: #0056b3;
+}

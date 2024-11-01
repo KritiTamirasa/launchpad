@@ -1,9 +1,10 @@
 // src/App.js
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
+import './styling/App.css';
 import mapImage from './image/map.jpg';
 import HomePage from './HomePage';
+import SettingsBox from './components/SettingsBox'; // Import SettingsBox component
 
 function Map() {
   const [selectedDot, setSelectedDot] = useState(null);
@@ -17,20 +18,25 @@ function Map() {
   };
 
   return (
-    <div className="map-background" style={{ backgroundImage: `url(${mapImage})` }}>
-      <div className="dot dot1" onClick={() => handleDotClick(1)}></div>
-      <div className="dot dot2" onClick={() => handleDotClick(2)}></div>
-      <div className="dot dot3" onClick={() => handleDotClick(3)}></div>
-      <div className="dot dot4" onClick={() => handleDotClick(4)}></div>
+    <div className="map-page">
+      <div className="map-background" style={{ backgroundImage: `url(${mapImage})` }}>
+        <div className="dot dot1" onClick={() => handleDotClick(1)}></div>
+        <div className="dot dot2" onClick={() => handleDotClick(2)}></div>
+        <div className="dot dot3" onClick={() => handleDotClick(3)}></div>
+        <div className="dot dot4" onClick={() => handleDotClick(4)}></div>
 
-      {selectedDot && (
-        <div className="menu" style={{ top: '50%', left: '50%' }}>
-          <div className="menu-content">
-            <p>Menu for Dot {selectedDot}</p>
-            <button onClick={handleCloseMenu}>Close</button>
+        {selectedDot && (
+          <div className="menu" style={{ top: '50%', left: '50%' }}>
+            <div className="menu-content">
+              <p>Menu for Dot {selectedDot}</p>
+              <button onClick={handleCloseMenu}>Close</button>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
+      
+      {/* Add SettingsBox in the top-right corner */}
+      <SettingsBox />
     </div>
   );
 }
